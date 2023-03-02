@@ -1,0 +1,7 @@
+{
+  "name": "unholyEscapeLandingPage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
