@@ -1,27 +1,130 @@
-#container {
+
+
+@media (min-width: 768px) {
+  .bloody {
+    font-size: 130px;
+
+  }
+}
+@media (max-width: 767px) {
+  .bloody {
+    font-size: 75px;
+  }
+}
+.bloody {
+  font-family: 'Bloody';
+  font-weight: bold;
+  color: red;
   text-align: center;
+  margin-top: 80px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.rating{
+  font-family: 'OctoberCrow';
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  font-size: 50px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+@media (min-width: 768px) {
+  .october {
+    font-size: 80px;
 
-  color: #8c8c8c;
-
-  margin: 0;
+  }
+  ion-slide img {
+    overflow: hidden;
+    border: 10px black;
+    height: 85vh;
+    }
+    
+  
+}
+@media (max-width: 767px) {
+  .october {
+    font-size: 40px;
+  }
+  ion-slide img {
+    overflow: hidden;
+    border: 10px black;
+    height: 40vh;
+    }
+}
+.october {
+  font-family: 'OctoberCrow';
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  cursor: pointer;
 }
 
-#container a {
+.october:active {
   text-decoration: none;
+  color: red; /* or any other color */
+  transform: scale(0.9); /* or any other transform */
 }
+
+.category {
+  font-family: 'OctoberCrow';
+  font-weight: bold;
+  color: red;
+  font-size: 20px;
+  margin: auto;
+}
+
+ion-slide {
+  
+}
+ion-row{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+ion-slide img {
+border: 10px black;
+
+}
+ion-button {
+  --background: transparent;
+  font-family: 'OctoberCrow';
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+ion-content{
+  --background: url('../../assets/images/fotocarrusel.jpg')  no-repeat center center / cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  height: 100%;
+  opacity: .9;
+
+}
+
+.slider-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.slider-button ion-icon {
+  margin: 0;
+  padding: 0;
+  color: red;
+}
+
+.slider-image {
+  object-fit: cover;
+  width: 100%;
+}
+
+body{
+  background-image: url('../../assets/images/fotocarrusel.jpg');
+}
+
+
+

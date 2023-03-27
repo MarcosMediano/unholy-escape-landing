@@ -1,0 +1,55 @@
+.category {
+    font-family: 'OctoberCrow';
+    font-weight: bold;
+    color: red;
+    font-size: 30px;
+    margin: auto;
+}
+
+
+.submit-button {
+    font-family: 'OctoberCrow';
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin: auto;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+ion-row {
+    margin-top: 20px;
+    
+
+}
+@media (max-width: 767px) {
+    ion-title{
+        font-family: 'OctoberCrow';
+        color: red;
+        font-size: 15px;
+    }
+  }
+@media (min-width: 768px) {
+    ion-title{
+        font-family: 'OctoberCrow';
+        color: red;
+        font-size: 30px;
+    }
+  }
+
+
+ion-toolbar{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-col{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars {
+    margin: auto;
+}

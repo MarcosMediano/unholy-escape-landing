@@ -24,3 +24,16 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import "~swiper/swiper-bundle.min.css";
+
+@font-face {
+    font-family: 'Bloody';
+    src: url('../assets/fonts/bloody.TTF');
+    /* add more sources for different file types */
+  }
+@font-face {
+    font-family: 'OctoberCrow';
+    src: url('../assets/fonts/October Crow.ttf');
+    /* add more sources for different file types */
+  }

@@ -1,20 +1,186 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button  download="Manual"  href="../../assets/downloads/reported commands.pdf">
+   User Manual
+  </ion-button>
+  <ion-grid>
+    <!-- title -->
+    <ion-row>
+      <ion-col>
+        <h2 class="bloody">Unholy Escape</h2>
+      </ion-col>
+    </ion-row>
+    <!-- buttons -->
+    <ion-row>
+      <ion-col>
+        <h2 class="october" href="../../assets/downloads/reported commands.pdf" >Download</h2>
+        
+      </ion-col>
+      <ion-col>
+        <h2 class="october" (click)="displayForm()">Rate Us</h2>
+      </ion-col>
+    </ion-row>
+    <!-- slider -->
+    <ion-row class="button-container">
+      <ion-col size="1" >
+        <button id="prev" class="slider-button" (click)="prevSlide()" margin-left="85%">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col size="10">
+        <ion-slides [options]="sliderOpts">
+          <ion-slide>
+            <img src="https://media.discordapp.net/attachments/921666949673549864/1084271211376279682/foto2carrusel.jpg"
+              class="slider-image" />
+          </ion-slide>
+          <ion-slide>
+            <img src="https://media.discordapp.net/attachments/921666949673549864/1088976154221879458/fa0dadbe-0e15-4aa2-b3b5-197c08cd15c5.png"
+              class="slider-image" />
+          </ion-slide>
+          <ion-slide>
+            <img src="https://media.discordapp.net/attachments/921666949673549864/1088976237055193249/2e023b6e-3b36-406c-8ccf-af638fb59290.png"
+              class="slider-image" />
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col size="1">
+        <button class="slider-button" (click)="nextSlide()">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <!-- rating -->
+    <ion-row  >
+      <ion-col sizeXl="4" >
+        
+        <ion-accordion-group>
+          
+          <ion-accordion value="first">
+          <ion-item slot="header" color="black">
+            <ion-row>
+
+              <ion-col size="12" offset="0" sizeSm="6">
+                <ion-label>
+                  <h2 class="rating">Rating</h2>
+                </ion-label>
+              </ion-col>
+              <ion-col size="12" size-sm="4" offset-sm="0">
+
+
+                <ngx-stars [readonly]="true" [size]="3" [color]="'gold'" class="stars"
+                  [initialStars]="teamScore.overallScore"></ngx-stars>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <ion-row>
+              <ion-col>
+                <ion-label class="category">{{ categories[0] }}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ngx-stars [readonly]="true" [size]="2" [color]="'gold'" class="stars" [initialStars]="teamScore.gameplay"></ngx-stars>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label class="category">{{ categories[1] }}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ngx-stars [readonly]="true" [size]="2" [color]="'gold'" class="stars" [initialStars]="teamScore.music"></ngx-stars>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label class="category">{{ categories[2] }}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ngx-stars [readonly]="true" [size]="2" [color]="'gold'" class="stars" [initialStars]="teamScore.design"></ngx-stars>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label class="category">{{ categories[3] }}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ngx-stars [readonly]="true" [size]="2" [color]="'gold'" class="stars" [initialStars]="teamScore.story"></ngx-stars>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-label class="category">{{ categories[4] }}</ion-label>
+              </ion-col>
+              <ion-col>
+                <ngx-stars [readonly]="true" [size]="2" [color]="'gold'" class="stars" [initialStars]="teamScore.difficulty"></ngx-stars>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  <!-- <ion-slides>
+    <ion-slide>
+      <img src="https://media.discordapp.net/attachments/921666949673549864/1084271191973441547/fotocarrusel.jpg?width=832&height=468" />
+    </ion-slide>
+    <ion-slide>
+      <img src="https://media.discordapp.net/attachments/921666949673549864/1084271211376279682/foto2carrusel.jpg?width=629&height=468" />
+    </ion-slide>
+  </ion-slides> -->
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-label class="category">{{ categories[0] }}</ion-label>
+      </ion-col>
+      <ion-col size="12" offset="3" size-sm="4" offset-sm="0">
+        <ngx-stars [size]="2" [color]="'gold'" class="stars" ></ngx-stars>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-label class="category">{{ categories[1] }}</ion-label>
+      </ion-col>
+      <ion-col size="12" offset="3" size-sm="4" offset-sm="0">
+        <ngx-stars [size]="2" [color]="'gold'"></ngx-stars>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-label class="category">{{ categories[2] }}</ion-label>
+      </ion-col>
+      <ion-col size="12" offset="3" size-sm="4" offset-sm="0">
+        <ngx-stars [size]="2" [color]="'gold'" class="stars" ></ngx-stars>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-label class="category">{{ categories[3] }}</ion-label>
+      </ion-col>
+      <ion-col size="12" offset="3" size-sm="4" offset-sm="0">
+        <ngx-stars [size]="2" [color]="'gold'" class="stars" ></ngx-stars>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-sm="6">
+        <ion-label class="category">{{ categories[4] }}</ion-label>
+      </ion-col>
+      <ion-col size="12" offset="3" size-sm="4" offset-sm="0">
+        <ngx-stars [size]="2" [color]="'gold'" class="stars" ></ngx-stars>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid> -->
+
 </ion-content>
