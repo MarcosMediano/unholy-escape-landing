@@ -16,8 +16,9 @@ import { IonSlides } from '@ionic/angular';
 export class HomePage {
   @ViewChild(IonSlides) slides: IonSlides;
 
+  isMouseover = true;
   teamScore: any;
-  teamId = 3;
+  teamId = 5;
   categories = ['Gameplay', 'Music', 'Design', 'Story', 'Difficulty'];
   gameForm: any;
   sliderOpts = {
@@ -42,18 +43,7 @@ export class HomePage {
     });
     
   }
-  createVote(data: any) {
-    try {
-      this.votesService.createVote(data).subscribe(response => {
-        console.log(response);
-      }, error => {
-        console.log(error);
-      });
-    } catch (error) {
-      console.log("An error occurred while attempting to create the vote:");
-      console.log(error);
-    }
-  }
+
   getVotesByTeam(teamId: any) {
     this.votesService.getVotesByTeam(teamId).subscribe(response => {
       console.log(response);
@@ -78,4 +68,86 @@ export class HomePage {
   nextSlide() {
     this.slides.slideNext();
   }
+
+  // countStar(star: number, type: string) {
+  //   this.isMouseover = false;
+  //   switch (type) {
+  //     case "Gameplay":
+  //       this.selectedValue = star;
+  //       this.data = this.selectedValue;
+  //       break;
+  //     case "Music":
+  //       this.selectedValue2 = star;
+  //       this.data2 = this.selectedValue2;
+  //       break;
+  //     case "Design":
+  //       this.selectedValue3 = star;
+  //       this.data3 = this.selectedValue3;
+  //       break;
+  //     case "Story":
+  //       this.selectedValue4 = star;
+  //       this.data4 = this.selectedValue4;
+  //       break;
+  //     case "Difficulty":
+  //       this.selectedValue5 = star;
+  //       this.data5 = this.selectedValue5;
+  //       break;
+  //     default:
+  //       break;
+  //   }
+    
+  //   console.log("Gameplay"+this.data);
+  //   console.log("Music"+this.data2);
+  //   console.log("Design"+this.data3);
+  //   console.log("Story"+this.data4);
+  //   console.log("Difficulty"+this.data5);
+  // }
+
+  // //for adding star
+
+  // addClass(star: number, type: string) {
+  //   if (this.isMouseover) {
+  //     switch (type) {
+  //       case "Gameplay":
+  //         this.selectedValue = star;
+  //         this.data = this.selectedValue;
+  //         break;
+  //       case "Music":
+  //         this.selectedValue2 = star;
+  //         this.data2 = this.selectedValue;
+  //         break;
+  //       case "Design":
+  //         this.selectedValue3 = star;
+  //         this.data3 = this.selectedValue;
+  //         break;
+  //       case "Story":
+  //         this.selectedValue4 = star;
+  //         this.data4 = this.selectedValue;
+  //         break;
+  //       case "Difficulty":
+  //         this.selectedValue5 = star;
+  //         this.data5 = this.selectedValue;
+  //         break;
+  //       default:
+  //         break;
+  //     }
+      
+  //     // console.log(this.selectedValue);
+  //     // console.log(this.selectedValue2);
+  //     // console.log(this.selectedValue3);
+  //     // console.log(this.selectedValue4);
+  //     // console.log(this.selectedValue5);
+
+  //   }
+  // }
+
+  // //for removing star
+
+  // removeClass() {
+  //   if (this.isMouseover) {
+  //     this.selectedValue = 0;
+  //     this.selectedValue2 = 0;
+  //     // console.log(this.selectedValue);
+  //   }
+  // }
 }

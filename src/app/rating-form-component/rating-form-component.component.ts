@@ -12,7 +12,7 @@ import { VotesService } from '../votes.service';
 })
 export class RatingFormComponentComponent implements OnInit {
   form: any;
-  teamId=3;
+  teamId=5;
   gameplay: number = 0;
   music: number = 0;
   design: number = 0;
@@ -28,7 +28,7 @@ export class RatingFormComponentComponent implements OnInit {
     private http: HttpClient
   ) {
     this.form = this.formBuilder.group({
-      teamId: '3',
+      teamId: '5',
       gameplay: ['', Validators.required],
       music: ['', Validators.required],
       design: ['', Validators.required],
